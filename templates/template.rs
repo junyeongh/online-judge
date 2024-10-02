@@ -1,14 +1,19 @@
 use std::io::{stdin, Read};
 
+// [Introduction - Rust Snippets for Competitive Programming](https://bamgoesn.github.io/rust-ps-md/intro.html)
+// [러스트 입출력 방법 총정리 - Rust로 알고리즘 풀기](https://velog.io/@unhappydogchew/러스트-입출력-방법-총정리-Rust로-알고리즘-풀기)
 fn main() {
-    // [러스트 입출력 방법 총정리 - Rust로 알고리즘 풀기](https://velog.io/@unhappydogchew/러스트-입출력-방법-총정리-Rust로-알고리즘-풀기)
-    // Single-line input
+    println!("Different ways to input/output for competitive programming in Rust");
+}
+
+fn input_single_line() {
     let mut buffer = String::new();
     stdin().read_line(&mut buffer).unwrap();
 
     println!("{}", buffer);
+}
 
-    // Multi-line input
+fn input_multi_line() {
     let mut buffer = String::new();
     stdin().read_line(&mut buffer).unwrap();
 
@@ -18,31 +23,35 @@ fn main() {
         buffer.clear();
         stdin().read_line(&mut buffer).unwrap();
     }
+}
 
+fn input_multiple_numbers() {
     // Multiple numbers as input
     let mut buffer = String::new();
-    //     parse all together
+
+    // 1. parse all together
     stdin().read_line(&mut buffer).unwrap();
     let mut input = buffer.split_ascii_whitespace().flat_map(str::parse::<i32>);
     let n = input.next().unwrap();
-    //     parse one by one
+
+    // 2. parse one by one
     stdin().read_line(&mut buffer).unwrap();
     let mut input = buffer.trim().split_ascii_whitespace();
     let a = input.next().unwrap().parse::<i32>().unwrap();
     let b = input.next().unwrap().parse::<i32>().unwrap();
-    //     parse numbers in a line as a vector
+
+    // 3. parse numbers in a line as a vector
     stdin().read_line(&mut buffer).unwrap();
     let v = buffer
         .split_ascii_whitespace()
         .flat_map(str::parse::<i32>)
         .collect::<Vec<i32>>();
+
     // Clear buffer before reusing
     buffer.clear();
+}
 
-    // Output
-    println!("{}", n);
-    println!("{n}");
-
+fn output_multi_line() {
     // Multi-line output using BufWriter
     // use std::io::{stdout, Write, BufWriter}
     let stdout = stdout();
@@ -51,8 +60,10 @@ fn main() {
     for i in 0..100_000 {
         writeln!(writer, "{i}").unwrap();
     }
+}
 
-    // String instance as buffer for outbut
+fn output_string_instance_as_buffer() {
+    // String instance as buffer for output
     // use std::fmt::Write
     let mut output = String::new();
 
@@ -60,7 +71,5 @@ fn main() {
         writeln!(output, "{i}").unwrap();
     }
 
-    println!("{output}");
+    println!("{}", output);
 }
-
-// [Introduction - Rust Snippets for Competitive Programming](https://bamgoesn.github.io/rust-ps-md/intro.html)
