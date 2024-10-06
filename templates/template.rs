@@ -1,4 +1,5 @@
-use std::io::{stdin, Read};
+use std::io::stdin;
+// use std::io::{stdin, Read};
 
 // [Introduction - Rust Snippets for Competitive Programming](https://bamgoesn.github.io/rust-ps-md/intro.html)
 // [러스트 입출력 방법 총정리 - Rust로 알고리즘 풀기](https://velog.io/@unhappydogchew/러스트-입출력-방법-총정리-Rust로-알고리즘-풀기)
@@ -11,6 +12,9 @@ fn input_single_line() {
     stdin().read_line(&mut buffer).unwrap();
 
     println!("{}", buffer);
+
+    let input = buffer.trim().parse::<i32>().unwrap();
+    println("{}", input);
 }
 
 fn input_multi_line() {
