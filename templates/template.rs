@@ -1,11 +1,11 @@
 use std::io::stdin;
 // use std::io::{stdin, Read};
 
+fn main() {
+    println!("Hello, world!");
+}
 // [Introduction - Rust Snippets for Competitive Programming](https://bamgoesn.github.io/rust-ps-md/intro.html)
 // [러스트 입출력 방법 총정리 - Rust로 알고리즘 풀기](https://velog.io/@unhappydogchew/러스트-입출력-방법-총정리-Rust로-알고리즘-풀기)
-fn main() {
-    println!("Different ways to input/output for competitive programming in Rust");
-}
 
 fn input_single_line() {
     let mut buffer = String::new();
