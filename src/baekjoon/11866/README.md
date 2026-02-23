@@ -1,0 +1,26 @@
+# 11866번: 요세푸스 문제 0
+
+- PLs
+  - [python version](./main.py)
+  - [haskell version](./main.hs)
+- (1) Python -> Haskell
+  - Python
+    - 효율적이진 않지만
+    - 직관적이라고 생각했음
+      - stdout에 찍었을 때 잘 나옴
+  - Haskell
+    - 같은 코드도 좀 더 고상하게 나올거라 생각했음
+    - claude에서 나온 코드 보면 처음 merge sort를 hs로 봤을 때가 생각났음
+- (2)
+  - 물론 딱봐도 효율적이진 않아서 좀 더 나은 방식은 뭐가 있나 궁금했음
+  - Python
+    - 뭔가 원순열 형태를 쉽게 나타낼 수 있는 구조면 좋을 것 같다는 막연한 생각
+    - `pop` 효율적인 뭔가가 있으면 좋을 것 같다는 생각은 들었음
+    - claude에서 나온 코드가
+      - 내가 생각한 효율적인 방법이긴 했는데
+      - 신기한 점이 `deque`, `popleft`까진 이해가 됐는데 `rotate`는 처음 봄.
+        - <https://docs.python.org/3/library/collections.html>
+    - 둘 다 n^2/2니까 O(n^2)이긴 할텐데 list slicing을 안 써서 효율적이긴 하겠음
+  - Haskell
+    - hs로 구현한 효율적인 방식에 대한 질문엔 `finger tree`라는 처음 들어보는 트리를 봤는데
+    - 이걸 쓰면 O(n log n)으로 나타낼 수도 있다는게 흥미로웠음
