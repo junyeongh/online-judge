@@ -152,7 +152,7 @@ I will share my thinking about the problem:
 
 ```
 src/
-  {online-judge}-{problem-number}/
+  {online-judge}/{problem-number}/
     main.py or main.rs    ## Solution implementation
     README.md             ## (Optional) Problem analysis and approach
 templates/
