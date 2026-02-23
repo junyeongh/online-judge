@@ -18,7 +18,9 @@ if __name__ == "__main__":
     ]
     solution = Solution()
     for example_input, example_output in examples:
-        # result = solution.method(*example_input)
+        # result = solution.method(example_input)
         # status = "PASS" if result == example_output else "FAIL"
-        # print(f"[{status}] Expected: {example_output}, Result: {result}")
+        # print(f"[{status}] For: {example_input}")
+        # print(f"  {example_output} (Expected)")
+        # print(f"  {result} (Result)\n")
         ...
